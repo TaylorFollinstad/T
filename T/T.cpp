@@ -1,23 +1,13 @@
 
 #include <iostream>
+#include "T.h"
 using namespace std;
+
+
 
 #define OLC_PGE_APPLICATION
 #include "olcPixelGameEngine.h"
 
-struct sEdge
-	// s is for start. e is for end.
-{
-	float sx, sy;
-	float ex, ey;
-};
-
-struct sCell
-{
-	int edge_id[4];
-	bool edge_exist[4];
-	bool exist = false;
-};
 
 #define NORTH 0
 #define SOUTH 1
