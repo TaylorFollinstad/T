@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "T.h"
+#include "WorldSave.h"
 using namespace std;
 
 
@@ -202,6 +203,16 @@ public:
 		{
 			int i = ((int)fSourceY / (int)fBlockWidth * nWorldWidth + ((int)fSourceX / (int)fBlockWidth));
 			world[i].exist = false; //!world[i].exist;
+		}
+
+		//Saves the world to a file.
+		if (GetKey(olc::Key::Q).bPressed) {
+			save_world("savefile.save", world, nWorldHeight, nWorldHeight);
+		}
+
+		//Loads the world from a file.
+		if (GetKey(olc::Key::E).bPressed) {
+			load_world("savefile.save", world, nWorldHeight, nWorldHeight);
 		}
 
 		ConvertTileMapToPolyMap(0, 0, nWorldWidth, nWorldHeight, fBlockWidth, nWorldWidth);

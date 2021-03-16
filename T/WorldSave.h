@@ -10,5 +10,6 @@ worldsave0.1 400 300
 */
 
 
-bool save_world(sCell cells[], int widtht, int height);
+bool save_world(const char* filename, sCell cells[], int width, int height);
+bool load_world(const char* filename, sCell world[], int width, int height);
 
